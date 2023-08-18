@@ -1,0 +1,13 @@
+version: "3"
+name: "minecraft_server_stack_v2"
+
+services:
+  minecraft-server:
+    container_name: "minecraft_server_container_v2"
+    image: "minecraft_server_v2:latest"
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    # volumes:
+    #   - "C:\\Docker_Volumes\\minecraft_server\\world:/srv/minecraft/world"
+    command: ["java", "-jar", "/srv/minecraft/server.jar", "nogui"]
